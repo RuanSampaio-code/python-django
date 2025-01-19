@@ -1,0 +1,15 @@
+{% extends "consultas/base.html" %}
+
+{% block title %}{{ titulo }}{% endblock %}
+
+{% block content %}
+<h1 class="title">{{ titulo }}</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="box">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="button is-success">Salvar</button>
+    <a href="{% url 'listar_consultas' %}" class="button is-light">Voltar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "consultas/base.html" %}
+
+{% block title %}Deletar Consulta{% endblock %}
+
+{% block content %}
+<h1 class="title">Deletar Consulta</h1>
+<div class="notification is-danger">
+    <p>Tem certeza que deseja deletar a consulta de <strong>{{ consulta.paciente.nome }}</strong> com <strong>{{ consulta.medico.nome }}</strong>?</p>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="button is-danger">Deletar</button>
+    <a href="{% url 'listar_consultas' %}" class="button is-light">Cancelar</a>
+</form>
+{% endblock %}

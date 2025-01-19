@@ -1,0 +1,15 @@
+{% extends "consultas/base.html" %}
+
+{% block title %}Detalhes da Consulta{% endblock %}
+
+{% block content %}
+<h1 class="title">Detalhes da Consulta</h1>
+<div class="box">
+    <p><strong>Médico:</strong> {{ consulta.medico.nome }}</p>
+    <p><strong>Especialidade:</strong> {{ consulta.medico.especialidade }}</p>
+    <p><strong>Paciente:</strong> {{ consulta.paciente.nome }}</p>
+    <p><strong>Data e Hora:</strong> {{ consulta.data_horario }}</p>
+    <p><strong>Descrição:</strong> {{ consulta.descricao }}</p>
+</div>
+<a href="{% url 'listar_consultas' %}" class="button is-light">Voltar</a>
+{% endblock %}
